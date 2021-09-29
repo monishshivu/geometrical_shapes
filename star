@@ -14,40 +14,42 @@ def automate():
    rate = rospy.Rate(10)
 
    n = Twist()
-   n.linear.x = 0.0
-   n.angular.z = 0.0
-   pub.publish(n)
-   time.sleep(1)
+
 
    i=0
+   rate.sleep()
 
-   for i in range (3):
+   for i in range (6):
 
 
-      n.linear.x = 2
+      n.linear.x = 3
       n.angular.z = 0
       pub.publish(n)
       time.sleep(2)
+      rate.sleep()
 
 
       n.linear.x = 0
       n.angular.z = 0
       pub.publish(n)
       time.sleep(1)
+      rate.sleep()
 
 
       n.linear.x = 0
-      n.angular.z = 2.1
+      n.angular.z =2.5
       pub.publish(n)
-      time.sleep(1) 
+      time.sleep(2)
+      rate.sleep() 
 
       n.linear.x = 0
       n.angular.z = 0
       pub.publish(n)
-      time.sleep(2) 
+      time.sleep(1)
+      rate.sleep() 
 
 
-      i=i+1
+      
 
 
 if __name__ == '__main__' :
